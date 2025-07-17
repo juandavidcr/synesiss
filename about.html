@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | Synesiss</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* About Page Styles */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.values-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.values-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--dark-color);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.value-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.value-card p {
+    color: var(--text-light);
+}
+
+.team-section {
+    padding: 80px 0;
+}
+
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: var(--dark-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid var(--light-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.team-member p {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpg" alt="Synesiss Logo">
+            </a>
+            <!--<nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="index.html#serv">Servicios</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+-->
+
+<nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="p-2 navbar-brand" href="#">SynesissWebApps</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#serv">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contáctanos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+            <!-- <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button> -->
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Sobre Nosotros</h1>
+            <p>Conoce más sobre nuestra empresa, valores y equipo</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>Synesiss nació en 2018 con la visión de crear soluciones tecnológicas innovadoras que resuelvan problemas reales. Desde nuestros humildes comienzos en un pequeño espacio de coworking, hemos crecido hasta convertirnos en un equipo de más de 20 profesionales apasionados por la tecnología.</p>
+                    <p>Nuestro enfoque siempre ha sido el mismo: entender las necesidades únicas de cada cliente y ofrecer soluciones personalizadas que impulsen su éxito.</p>
+                </div>
+                <div class="about-image">
+                    <img src="img/team.png" alt="Equipo de Synesiss">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovación</h3>
+                    <p>Buscamos constantemente nuevas formas de resolver problemas y mejorar nuestras soluciones.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Transparencia</h3>
+                    <p>Mantenemos una comunicación clara y honesta con nuestros clientes en cada etapa del proyecto.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Excelencia</h3>
+                    <p>Nos esforzamos por ofrecer la más alta calidad en cada producto que desarrollamos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Conoce a Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="img/3108140.jpeg" alt="Miembro del equipo">
+                    <h3>Juan David Contreras Ruiz</h3>
+                    <p>CEO & Fundador</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/3760071.jpeg" alt="Miembro del equipo">
+                    <!-- <img src="images/team-member2.jpg" alt="Miembro del equipo"> -->
+                    <h3>Santiago Aviles Vazquez</h3>
+                    <p>CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="img/edprProfileImg.jpg" alt="Miembro del equipo">
+                    <!-- <img src="images/team-member3.jpg" alt="Miembro del equipo"> -->
+                    <h3>Emilio Daniel Pineda</h3>
+                    <p>Head of UX/UI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <iframe style="margin: 0 auto !important;" src="https://97292b7ab19b4213ac2730758c4ebaf2.loophole.site" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="800px" width="700px" allowfullscreen></iframe>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.jpg" alt="Synesiss Logo">
+                    <p>Desarrollo de soluciones digitales innovadoras.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                       
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <video id="webcam" autoplay playsinline width="640" height="480"></video>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Synesiss.com. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+      const video = document.getElementById('webcam');
+  
+      // Verifica si el navegador soporta getUserMedia
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+          })
+          .catch(function(err) {
+            console.error("Error al acceder a la webcam:", err);
+          });
+      } else {
+        alert("Tu navegador no soporta acceso a la webcam.");
+      }
+    </script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</body>
+</html>
