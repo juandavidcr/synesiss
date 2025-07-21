@@ -119,28 +119,28 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll(); // Ejecutar al cargar la página
 
     // Validación básica del formulario de contacto
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            let isValid = true;
-            const inputs = this.querySelectorAll('input, textarea');
-            
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = 'red';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = '#ddd';
-                }
-            });
-            
-            if (!isValid) {
-                e.preventDefault();
-                alert('Por favor completa todos los campos requeridos.');
-            } else {
-                // Aquí podrías añadir envío AJAX del formulario
-                // alert('Gracias por tu mensaje. Nos pondremos en contacto pronto.');
-            }
-        });
+    document.getElementById('emailForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+  const response = await fetch('http://localhost:3000/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    if (response.ok) {
+        const jsonData = await response.json();
+        console.log(jsonData);
+      e.target.reset(); // Limpiar el formulario
+      alert('Correo enviado correctamente');
+    } else {
+      alert('Loading...');
     }
+    
+
+   
+  });
 });
