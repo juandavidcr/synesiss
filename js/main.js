@@ -124,23 +124,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-  const response = await fetch('http://synesiss.info:3000/api/send-email', {
+
+    const response = await fetch('/api/send-email', {
+    // const response = await fetch('http://synesiss.info:3000/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     });
+
     if (response.ok) {
-        const jsonData = await response.json();
-        console.log(jsonData);
-      e.target.reset(); // Limpiar el formulario
       alert('Correo enviado correctamente');
     } else {
-      alert('Loading...');
+      alert('Error al enviar el correo');
     }
-    
-
-   
   });
 });
