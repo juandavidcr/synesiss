@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    const response = await fetch('/api/send-email', {
-    // const response = await fetch('http://synesiss.info:3000/api/send-email', {
+    //const response = await fetch('/api/send-email', {
+     const response = await fetch('synesiss.info:3000/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
