@@ -56,7 +56,14 @@
     </div>
     <hr>
     <section class="hero" 
-    style="scale:0.5; margin:0 auto; max-width: 1000px; background-image: url('./img/portada.png');background-size:cover; max-height: 390px;">
+    style="    position: relative;
+    top: -62px;
+    scale: 0.75;
+    margin: 0 auto;
+    max-width: 995px;
+    background-image: url(./img/portada.png);
+    background-size: cover;
+    max-height: 546px;">
     </section>
    
         <div class="container">
@@ -64,12 +71,32 @@
             <a name="serv"> 
                 <h2>Nuestros Servicios</h2>
              </a>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-code"></i>
+        <div class="services-grid">
+            <div class="card" onclick="showModal('Desarrollo Web ', 'Tenemos la posibilidad de ofrecerte: Sitios web responsivos y aplicaciones web personalizadas, adaptandonos a tus necesidades.')">
+                <div class="service-card">                   
+                    <img style="width: 20%; background-clip:unset; background: fixed;" src="/frontend/img/junataweb.jpg" alt="desarrollo">
                     <h3>Desarrollo Web</h3>
-                    <p>Sitios web responsivos y aplicaciones web personalizadas.</p>
+                    <p>
+                        Tomamos en cuenta tus necesidades para crear soluciones web y de escritorio si se necesita evaluando tu caso.
+                        <b style="color: blue;font-size: 0.8rem;">Más información...</b>
+                    </p>
                 </div>
+            </div>
+
+
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                        <button onclick="hideModal()" style="float: right; border: none; background: none; font-size: 25px; cursor: pointer;">×
+                        </button>
+                        <i style="float:center; width: 15%;" class="fas fa-code fa-3x"></i>
+                        <h2 id="modal-title">                                                
+                        </h2>
+                        <img class="thumbnail" src="/frontend/img/desweb.jpg" alt="desarrollo">
+                        <p id="modal-content"></p>
+                    </div>
+                </div>
+                        
+                
                 <div class="service-card">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Apps Móviles</h3>
@@ -135,8 +162,7 @@
                 <p><i class="fas fa-envelope"></i> info@synesiss.org</p>
                 <p><i class="fas fa-phone"></i> +52 5547919376</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                   
                     <a href="#"><i class="fab fa-github"></i></a>
                 </div>
             </div>
@@ -148,5 +174,24 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    function showModal(title, content) {
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-content').textContent = content;
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function hideModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    // Cerrar al hacer clic fuera
+    window.onclick = function(event) {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            hideModal();
+        }
+    }
+</script>
 </body>
 </html>
