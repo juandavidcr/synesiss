@@ -18,7 +18,7 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="p-2 navbar-brand" href="#">SynesissWebApps</a>
+          <a class="p-2 navbar-brand" href="#">Synesiss</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -68,33 +68,34 @@
                 <img class="recorte-redondeado"  src="img/portada.png" alt="nosotros">
             </div>
             <div>
-            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSinergyMx%2Fposts%2F1219938806810466&show_text=true&width=500" width="400" height="477" style="border: none;
+            <!-- <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSinergyMx%2Fposts%2F1219938806810466&show_text=true&width=500" width="400" height="477" style="border: none;
             overflow: hidden;margin-left: 15% !important;  top: 35px; margin-bottom: -15%;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-            </iframe>
+            </iframe> -->
                 
             </div>
         </div>
     </section>
- 
-    <div class="contact-form">
-                    <h2 style="font-size: medium;">Introduce la información de tu negocio para sacar el máximo provecho en la toma de decisiones, recabando datos</h2>
-                    <!-- <form id="emailForm" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Nombre completo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Correo electrónico para contactarnos contigo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="subject" id="subject" placeholder="Giro de la empresa" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="description" id="description" placeholder="Descripción de tu negocio" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
-                       
-                    </form> -->
-                </div>
+    <div class="container">
+        <div class="contact-form">
+                        <h2 style="font-size: medium;">Introduce la información de tu negocio para sacar el máximo provecho en la toma de decisiones, recabando datos</h2>
+                        <form id="emailForm" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" placeholder="Correo electrónico para contactarnos contigo" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" id="subject" placeholder="Giro de la empresa" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" id="description" placeholder="Descripción de tu negocio" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensaje</button>
+                           
+                        </form>
+        </div>
+    </div>
 
     <footer>
     <div class="container">
@@ -117,7 +118,7 @@
                 <p><i class="fas fa-phone"></i> +52 5547919376</p>
                 <div class="social-icons">
                     
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/juandavidcr"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
@@ -130,30 +131,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
    <script>
-  //    document.getElementById('emailForm').addEventListener('submit', async function (e) {
-  //    e.preventDefault(); // evita que recargue la página
+     document.getElementById('emailForm').addEventListener('submit', async function (e) {
+     e.preventDefault(); // evita que recargue la página
 
-  //   const data = {
-  //     name: document.getElementById('name').value,
-  //     correo: document.getElementById('email').value,
-  //     asunto: document.getElementById('subject').value,
-  //     description: document.getElementById('description').value
-  //   };
+    const data = {
+      name: document.getElementById('name').value,
+      correo: document.getElementById('email').value,
+      asunto: document.getElementById('subject').value,
+      description: document.getElementById('description').value
+    };
 
-  //   const response = await fetch('http://localhost:3000/api/send-email', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(data)
-  //   });
+    const response = await fetch('http://localhost:3000/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-  //   if (response.ok) {
-  //     alert('¡Mensaje enviado con éxito!');
-  //   } else {
-  //     alert('Ocurrió un error al enviar el mensaje');
-  //   }
-  // });
+    if (response.ok) {
+      alert('¡Mensaje enviado con éxito!');
+    } else {
+      alert('Ocurrió un error al enviar el mensaje');
+    }
+  });
    </script>
 </body>
 </html>
