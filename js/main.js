@@ -135,9 +135,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     if (response.ok) {
+
       alert('Correo enviado correctamente');
+      window.location.href = 'index.html';
+
     } else {
       alert('Error al enviar el correo');
+      window.location.href = 'index.html';
+
     }
   });
 });

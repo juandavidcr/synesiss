@@ -150,9 +150,15 @@
     });
 
     if (response.ok) {
+      document.getElementById('emailForm').reset();
       alert('¡Mensaje enviado con éxito!');
+      window.location.href = 'index.html';
+
     } else {
+      window.location.href = 'index.html';
       alert('Ocurrió un error al enviar el mensaje');
+      window.location.href = 'index.html';
+
     }
   });
    </script>
