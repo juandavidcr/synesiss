@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    const response = await fetch('http://localhost:3000/api/send-email', {
+    const response = await fetch('https://synesissback-back-cjneyd-50746a-31-97-218-94.traefik.me:3000/api/send-email', {
     // const response = await fetch('https://synesiss.info:3000/api/send-email', {
       method: 'POST',
       headers: {
